@@ -1,0 +1,49 @@
+.temp {
+  font-size: 50%;
+}
+
+.terminal {
+  font-family: Menlo, monospace;
+  font-size: 80%;
+  color: red;
+}
+
+.path {
+  font-family: 'Courier New', Courier, monospace;
+  color: green;
+}
+
+.code {
+  font-family: Menlo, monospace;
+  font-size: 80%;
+}
+
+.url {
+  color: blue;
+}
+
+.placeholder {
+  font-style: italic;
+}
+
+.comment {
+  font-size: 75%;
+  color: gray;
+}
+
+.todo {
+  text-decoration: underline;
+  font-weight: bold;
+  font-family: Arial, sans-serif;
+  font-size: 8px;
+}
+
+.dir {
+  
+}
+
+.file {
+  font-weight: bold;
+  color: red;}
+
+

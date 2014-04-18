@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Rails app blueprint</title>
+    <link href='styles.css' type='text/css' rel='stylesheet' />
+  </head>
+  <body>
+    <h4>Software prerequisites</h4>
+    <ul>
+      <li>Ruby</li>
+      <li>Rails</li>
+      <li>PostgreSQL</li>
+      <li>Bundler</li>
+    </ul>
+
+    <h4>Building a Rails application:</h4>
+    <ol>
+      <li>Enter <span class='terminal'>rails new <span class='placeholder'>app_name</span></span> in terminal.
+        <ul>
+          <li class='comment'>This creates a directory named <span class='placeholder'>app_name</span> in the current working directory, with all the initial Rails app contents inside.</li>
+        </ul>
+      </li>
+      <li>Create <span class='path'>README.md</span>.</li>
+      <li><del>In <span class='path'>config/application.rb</span> add <span class='code'>config.action_controller.permit_all_parameters = true</span> just before the last two <span class='code'>end</span> keywords.</del>(Deprecated when using strong parameters)</li>
+      <li><del>In <span class='path'>app/controllers/application_controller.rb</span> comment out <span class='code'>protect_from_forgery with: :exception</span></del>(Deprecated when using authenticity tokens to prevent <abbr title='cross-site request forgery'>CSRF</abbr>)</li>
+      <li>Edit <span class='path'>config/database.yml</span>. <span class='todo'>Expand</span></li>
+      <li>Edit <span class='path'>Gemfile</span>. <span class='todo'>Expand</span></li>
+      <li>Run <span class='terminal'>bundle</span> to install all gems and their dependencies.</li>
+      <li>Set up RSpec with <span class='terminal'>rails g rspec:install</span>.</li>
+      <li>Run <span class='terminal'>rake db:create</span>.</li>
+      <li>Perform migration cycle:
+        <ol>
+          <li>Enter <span class='terminal'>rails g migration <span class='placeholder'>migration_name</span></span>.</li>
+          <li>Edit <span class='path'>db/migrate/timestamp_<span class='placeholder'>migration_name</span></span>.
+            <ul>
+              <li>Give table name of model class (e.g. <span class='placeholder code'>MyModel</span> being created, in (snake-)lowercase, pluralized (<span class='placeholder code'>my_models</span>).</li>
+              <li>Leave out the <span class='code'>id</span> column, it is always assumed and automatically generated.</li>
+            </ul>
+          </li>
+          <li>Run <span class='terminal'>rake db:migrate; rake db:test:prepare</span>.</li>
+          <li>Create <span class='path'>app/models/<span class='placeholder'>my_model.rb</span></span> and make <span class='placeholder code'>MyModel</span> class inherit from <span class='code'>ActiveRecord::Base</span>.</li>
+          <li>Create <span class='path'>spec/<span class='placeholder'>my_model_spec.rb</span></span> and include <span class='code'>require 'spec_helper'</span>.</li>
+          <li>Write a failing test, make it pass using ActiveRecord methods in the class definition, and repeat process.</li>
+          <li>Create <span class='placeholder code'>MyModelsController</span>, subclassed from <span class='code'>ApplicationController</span> in <span class='path'>app/controllers/<span class='placeholder'>my_models_controller.rb</span></span>.</li>
+          <li>Implement <abbr title='Representational State Transfer'>REST</abbr> with the controller:
+            <ol>
+              <li>Create a <span class='path'>.html.erb</span> file in <span class='path'>app/views/<span class='placeholder'>my_models</span>/</span>, if necessary.</li>
+              <li>Write the method(s) that render/redirect to the view in the controller definition.</li>
+              <li>Establish the route(s) to the controller method(s) in <span class='path'>config/routes.rb</span> within the <span class='code'>Rails.application.routes.draw</span> block.</li>
+              <li>Repeat process for other RESTful actions.</li>
+            </ol>
+          </li>
+        </ol>
+      <li>Test the app:
+        <ol>
+          <li>Run <span class='terminal'>rake routes</span>.</li>
+          <li>Run <span class='terminal'>rails s</span> from anywhere within the app's directory structure to start the app.</li>
+          <li>Go to <span class='url'>http://localhost:3000/<span class='placeholder'>app_root</span></span> in the web browser.</li>
+        </ol>
+      </li>
+    </ol>
+  </body>
+</html>
