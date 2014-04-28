@@ -5,6 +5,7 @@ This is a compilation of cheat sheets that cover the Rails framework to help wit
 ###Cheatsheets
 * Building Rails App
 * File Structure of Rails App
+* Partials
 * Gem Inventory
 * Installing Software
 * HTTP methods/7 RESTful Actions/Routes
@@ -17,7 +18,6 @@ This is a compilation of cheat sheets that cover the Rails framework to help wit
 * Redirecting
 * Layout
 * Flash
-* Partials
 * Sass/Less/Bootstrap
 * Magic methods
 * Security Basics
