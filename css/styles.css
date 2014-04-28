@@ -53,6 +53,9 @@ body {
   padding-bottom: 50px;
   margin-bottom: 0;
 }
+.narrow {
+  width: 50% !important;
+}
 .cheat-list ul li {
   list-style: none !important;
 }
