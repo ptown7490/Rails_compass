@@ -45,6 +45,13 @@ body {
   margin-top: 0;
   font-weight: lighter;
 }
+h1.heading {
+  font-size: 1.8em;
+  letter-spacing: .07em;
+}
+.subheading {
+  font-weight: lighter;
+}
 .intro {
   background-color: #D5E9F6;
   height: 100%;
