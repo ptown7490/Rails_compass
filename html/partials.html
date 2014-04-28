@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Partials</title>
+    <link href='../css/partial_style.css' type='text/css' rel='stylesheet' />
+    <link href='../css/styles.css' type='text/css' rel='stylesheet' />
+  </head>
+  <body>
+    <header 
+    <nav id="header">
+      <ul class="pull-left">
+        <li><a href="index.html">Rails Compass</a></li>
+      </ul>
+      <ul class="pull-right">
+        <li>Cheatsheets</li>
+      </ul>
+    </nav>
+  </header>
+  <section class="brand">
+    <div class="container center">
+      <h1>Rails Compass</h1>
+      <h3>Cheat sheets for setting up a Rails 4 app</h3>
+    </div>
+  </section>
+    <section class="intro">
+      <div class="container">
+        <h3>Partials</h3>
+        <p>Partial templates, or just partials, are chunks of code that live in there own file and can be inserted into a page and rendered as if they were written on the page. Partials allow you to break you code up into more manageable chunks. Another benefit of partials is that they can be reused on the same page or in other pages without having to rewrite the code. They are a great way to DRY up your code.</p>
+      </section>
+      <div class="container">
+      <h3>Layout Partials</h3>
+      <p>It is very common to make partials for the header and the footer in the application layout.</p>
+      <section class="code-block">
+        <div class="block-head">layouts/application.html.erb</div>
+          <pre>
+            <code>
+              &lt;body&gt;
+                <span class="dark"><%= render 'layouts/header' %></span>
+                <%= yield %>
+              &lt;/body&gt;
+            </code>
+          </pre>
+      </section>
+      <section class="code-block">
+        <div class="block-head">layouts/_header.html.erb</div>
+          <pre>
+            <code>
+              <span class="dark">
+                &lt;div id="header" class="nav navbar navbar-fixed-top">
+                  &lt;ul class="brand nav navbar-nav pull-left">
+                    &lt;li><%= link_to 'Brand Name', root_url %>&lt;/li>
+                  &lt;/ul>
+                  &lt;ul class="nav navbar-nav pull-right">
+                    &lt;li><%= link_to 'Login', new_session_path %>&lt;/li>
+                  &lt;/ul>
+                &lt;/div>
+              </span>
+            </code>
+          </pre>
+      </section>
+      <h3>Form partials</h3>
+      <p>Another very common place to use partials is for displaying forms. If the code for the "new user" form will be the same as the "edit user" form you can write it as a partial and render it on both pages so you don't have to repeat yourself.
+      </p>
+      <section class="code-block">
+        <div class="block-head">users/new.html.erb</div>
+          <pre>
+            <code>
+              &lt;h1>New User&lt;/h1>
+              &lt;form action="/contacts" method="post">
+                <span class="dark">&lt;%= render('form') %></span>
+                &lt;button>Create User&lt;/button>
+              &lt;/form>
+            </code>
+          </pre>
+      </section>
+      <section class="code-block">
+        <div class="block-head">users/edit.html.erb</div>
+          <pre>
+            <code>
+              &lt;h1>Edit User&lt;/h1>
+              &lt;form action="/contacts/&lt;%= @contact.id %>" method="post">
+                &lt;input name="_method" type="hidden" value="patch">
+                <span class="dark">&lt;%= render('form') %></span>
+                &lt;button>Update Contact&lt;/button>
+              &lt;/form>
+            </code>
+          </pre>
+      </section>
+      <section class="code-block">
+        <div class="block-head">users/_form.html.erb</div>
+          <pre>
+            <code>
+              <span class="dark">
+                &lt;label for="contact_name">Name&lt;/label>
+                &lt;input id="contact_name" name="contact[name]" type="text" value="&lt;%= @contact.name %>">
+                &lt;label for="contact_phone">Phone&lt;/label>
+                &lt;input id="contact_phone" name="contact[phone]" type="text" value="&lt;%= @contact.phone %>">
+                &lt;label for="contact_email">Email&lt;/label>
+                &lt;input id="contact_email" name="contact[email]" type="text" value="&lt;%= @contact.email %>">
+              </span>
+            </code>
+          </pre>
+      </section>
+      <p>Notice that you name partials with a leading underscore "_form"(to distinguish them from other views) but when you call the partial "render 'form'. </p>
+      </div>
+    </div>
+  </body>
+</html>

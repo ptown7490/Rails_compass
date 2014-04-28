@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Rails file structure</title>
+    <link href='../css/styles.css' type='text/css' rel='stylesheet' />
+    <link href='../css/partial_style.css' type='text/css' rel='stylesheet' />
+</head>
+<body>
+	<header 
+		<nav id="header">
+			<ul class="pull-left">
+				<li><a href="index.html">Rails Compass</a></li>
+			</ul>
+			<ul class="pull-right">
+				<li>Cheatsheets</li>
+			</ul>
+		</nav>
+	</header>
+	<section class="brand">
+		<div class="container center">
+			<h1 class="heading">Rails Compass</h1>
+			<h3 class="subheading">Cheat sheets for setting up a Rails 4 app</h3>
+		</div>
+	</section>
+	<section class="intro">
+		<div class="container">
+			<h1>Basic Structure of a Rails 4 App</h1>
+			<p>When you first create a Rails application by running "rails new <em>app_name</em>" from the command line, Rails generates the following file structure automatically.</p>
+		</div>
+	</section>
+	<div class="container">
+	<span class='dir'>
+	<ul>
+		<li>app
+			<ul>
+				<li>assets</li>
+					<ul>
+						<li>images</li>
+						<li>javascripts</li>
+							<ul class="blank">
+								<li>application.js</li>
+							</ul>
+						<li>stylesheets</li>
+							<ul class="blank">
+								<li>application.css</li>
+							</ul>
+					</ul>
+				<li>controllers
+					<ul>
+						<li>application_controller.rb</li>
+					</ul>
+				</li>
+				<li>models</li>
+				<li>views
+					<ul>
+						<li>layouts
+							<ul class="blank">
+								<li>application.html.erb</li>
+								<li>_errors.html.erb</li>
+							</ul>
+						</li>
+					</ul>
+				</li>
+			</ul>
+		</li>
+		<li>bin</li>
+			<ul class="blank">
+				<li>bundle</li>
+				<li>rails</li>
+				<li>rake</li>
+			</ul>
+		<li>config
+			<ul class="blank">
+				<li><span class='file'>application.rb</span></li>
+				<li>database.yml</li>
+			</ul>
+		</li>
+		<li>db</li>
+		<li>lib</li>
+		<li>log</li>
+		<li>public</li>
+		<li>spec
+			<ul class="blank">
+				<li>factories</li>
+				<li>features</li>
+			</ul>
+		</li>
+		<li>test</li>
+		<li>tmp</li>
+		<li>vendor</li>
+		<li class="blank">Gemfile</li>
+		<li class="blank">Gemfile.lock</li>
+		<li class="blank">Rakefile</li>
+		<li class="blank">README.md</li>
+		<li class="blank">.gitignore</li>
+	</ul>
+	</span>
+	</div>
+</body>
+</html>
