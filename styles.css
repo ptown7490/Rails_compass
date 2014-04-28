@@ -47,7 +47,7 @@
   color: red;}
 
 /* this is adding the triangles to you list items */
-/*ul {
+ul {
     margin: -.5em 0;
     padding: -.5em 1em;
     list-style: none;
@@ -63,8 +63,8 @@ li:before {
     left: -1em;
     top: 0.9em;
     position: relative;
-}*/
-.blank li {
+}
+ul.blank li {
   list-style: none !important;
 }
 li.blank {
