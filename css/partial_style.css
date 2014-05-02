@@ -19,6 +19,7 @@ body {
   margin: 0 auto;
   margin-bottom: 15px;
   color: DarkGray;
+  padding-left: -20px;
 }
 .block-head {
   width: 100%;
@@ -28,9 +29,20 @@ body {
   font-size: 14px;
   color: #555555;
   font-family: Helvetica;
-  padding: 4px 9.5px;
+  padding: 12px 9.5px;
 }
 .dark {
   color:#555;
 }
-
+.code-block-shallow {
+  width: 100%;
+  height: 40px;
+  background-color: #E6E6E6;
+  font-weight: 600;
+  font-size: 14px;
+  color: #555555;
+  padding: 12px 30px;
+}
+.code-container {
+  margin-left: -50px;
+}

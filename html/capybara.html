@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Capybara | Rails Compass</title>
+    <link href='../css/styles.css' type='text/css' rel='stylesheet' />
+    <link href='../css/partial_style.css' type='text/css' rel='stylesheet' />
+</head>
+<body>
+  <header
+    <nav id="header">
+      <ul class="pull-left">
+        <li><a href="index.html">Rails Compass</a></li>
+      </ul>
+      <ul class="pull-right">
+        <li><a herf="#">Cheatsheets</a></li><!-- this could be dropdown of all the cheat sheets -->
+      </ul>
+    </nav>
+  </header>
+  <section class="brand">
+    <div class="container center">
+      <h1 class="heading">Rails Compass</h1>
+      <h3 class="subheading">Cheat sheets for setting up a Rails 4 app</h3>
+    </div>
+  </section>
+  <section class="intro">
+    <div class="container narrow"> <!-- use the .narrow if content is not very wide, else remove -->
+      <h1>Capybara</h1>
+      <p>Capybara helps you <strong>test</strong> web applications by <strong>simulating</strong> how <strong>a real user</strong> would interact with your app. It is agnostic about the driver running your tests and comes with Rack::Test and Selenium support built in. WebKit is supported through an external gem.</p>
+      <p>It is very <strong>easy to install</strong> Capybara and get it up and running in your app. We will be using RSpec but if you are interested in using it with other testing tools check out the capybara <a href="https://github.com/jnicklas/capybara">README</a>.</p>
+    </div>
+  </section>
+  <div class="container narrow">
+    <h3>Using Capybara with RSpec</h3>
+      <div class="code-block-shallow">
+        <code>
+          gem 'capybara'
+        </code>
+      </div>
+    <p>Add this line to your test helper file:</p>
+    <div class="code-block-shallow">
+      <code>
+        require 'capybara/rails'
+      </code>
+    </div>
+    <p>Add the following line to your spec_helper.rb</p>
+    <div class="code-block-shallow">
+      <code>
+        require 'capybara/rspec'
+      </code>
+    </div>
+    <p>In you spec folder make a folder called 'features' which will hold your integration tests. </p>
+    <p>Then you can organize you test like below:</p>
+    <section class="code-block">
+      <div class="block-head dark">spec/features/pages_spec.rb</div>
+        <pre>
+          <code class="dark">
+    require 'spec_helper'
+
+    feature 'homepage' do
+      before { visit root_url }
+
+      it 'should have appropriate title' do
+        expect(page).to have_title "RoomShare"
+      end
+
+      it 'should have a search field' do
+        expect(page).to have_button "Search"
+      end
+
+      describe 'header' do
+        it '"Login" link should take you to the proper page' do
+          click_link 'Login'
+          expect(page).to have_title "Login | RoomShare"
+        end
+
+        it '"Sign up" link should take you to the proper page' do
+          click_link 'Sign up'
+          expect(page).to have_title "Sign up | RoomShare"
+        end
+
+        it 'should have a "RoomShare" link' do
+          click_link 'RoomShare'
+          expect(page).to have_title "RoomShare"
+        end
+      end
+    end
+          </code>
+        </pre>
+      </section>
+      <p>This could use further explanation.</p>
+  </div>
+</body>
+</html>
