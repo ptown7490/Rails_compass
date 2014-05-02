@@ -6,13 +6,17 @@ This is a compilation of cheat sheets that cover the Rails framework to help wit
 * Building Rails App
 * File Structure of Rails App
 * Partials
-* Gem Inventory
+* Capybara
 * Installing Software
 * HTTP methods/7 RESTful Actions/Routes
 * Testing Templates
 * Other
 
+###Status
+
+
 ###Todo
+* Gem Inventory
 * Better parameters
 * Heroku
 * Redirecting
@@ -22,7 +26,6 @@ This is a compilation of cheat sheets that cover the Rails framework to help wit
 * Magic methods
 * Security Basics
 * FactoryGirl
-* Capybara
 * Authentication
 * Paperclip
 * Devise
